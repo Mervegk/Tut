@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 | Exercise Solutions</title>
+</head>
+
+<body>
+
+  <script>
+    //8a
+    const basketball = {
+      price: 2095
+    };
+    console.log(basketball);
+
+    //8b
+    basketball.price = 2095 - 500;
+    console.log(basketball.price);
+
+    //8c
+    basketball['delivery-time'] = '3 days';
+    console.log(basketball);
+
+    //8d
+    const product1 = {
+      name: 'shirt',
+      price: 1000
+    }
+
+    const product2 = {
+      name: 'pants',
+      price: 1200
+    }
+
+    function comparePrice(product1, product2, property1, property2) {
+      if (property1 < property2)
+        return product1;
+      else if (property2 < property1)
+        return product2;
+    }
+    const lessExpensive = comparePrice(product1, product2, product1.price, product2.price);
+    console.log(lessExpensive);
+  </script>
+</body>
+
+</html>
