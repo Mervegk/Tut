@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM | Lesson 9</title>
+</head>
+
+<body>
+  <!-- EXAMPLE PROJECTS OF LESSON 9 -->
+  <p>YouTube Subscribe Button</p>
+  <button onclick="subscribeToYoutube();" class="subscribe-button">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Cost of order" class="cost-input" onkeydown="handleCostKeyDown(event);">
+  <button onclick="calculateTotal();">Calculate</button>
+  <p class="total-cost"></p>
+
+
+  <!--  <button>Button 1</button>
+  <button class="js-button">Button 2</button> -->
+
+  <!--  <script>
+    document.title = 'Good Job!'
+     console.log(document.title);
+     console.log(document.body);
+     console.log(typeof document.body);
+ 
+     console.log(document.body.innerHTML);
+     document.body.innerHTML = '<button>Good job!</button>'; 
+   console.log(document.querySelector('button').innerHTML);
+
+    document.querySelector('button').innerHTML = 'Changed';
+    console.log(document.querySelector('button').innerHTML);
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+  </script> -->
+
+  <script>
+    function subscribeToYoutube() {
+      const subscribeButton = document.querySelector('.subscribe-button');
+      if (subscribeButton.innerText === 'Subscribe') {
+        subscribeButton.innerHTML = 'Subscribed';
+      }
+      else {
+        subscribeButton.innerHTML = 'Subscribe';
+      }
+    }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector('.cost-input');
+      let cost = Number(inputElement.value);
+      if (cost < 40) {
+        cost = cost + 10;
+      }
+      document.querySelector('.total-cost').innerHTML = `$${cost}`;
+    }
+
+    function handleCostKeyDown(event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+  </script>
+
+</body>
+
+</html>
