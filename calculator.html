@@ -31,18 +31,23 @@
     <button onclick="calculator(' .')">.</button>
     <button onclick="calculator(' /')">/</button>
     <button onclick="
- calculation= eval(calculation);
-console.log(calculation);
-    ">=</button>
+    calculation = eval(calculation); 
+    //Solution 8h
+    localStorage.setItem('calculation', JSON.stringify(calculation))
+    console.log(calculation);">=</button>
   </p>
   <p>
     <button onclick="
       calculation = '';
-      console.log(calculation);
-    ">Clear</button>
+      console.log(calculation);">Clear</button>
   </p>
 
   <script>
+    //Solution 8h
+    const getLocal = JSON.parse(localStorage.getItem('calculation'))
+    console.log(getLocal);
+    //Solution 8h
+
     let calculation = "";
     function calculator(number) {
       calculation += number;

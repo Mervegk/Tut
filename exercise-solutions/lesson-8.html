@@ -9,7 +9,65 @@
 
 <body>
 
+  <h2>8I Solution</h2>
+  <button onclick="playGame('Heads')">heads</button>
+  <button onclick="playGame('Tails')">tails</button>
+
   <script>
+    //8i
+
+    //8j/k
+    let scoreCoin = JSON.parse(localStorage.getItem('scoreCoin')) || {
+      wins: 0,
+      loses: 0
+    };
+
+    function pickComputerMove() {
+      const randomNumber = Math.random();
+      let computerMove = '';
+      if (randomNumber < 0.5) {
+        computerMove = 'Heads';
+      }
+      else {
+        computerMove = 'Tails';
+      }
+      return computerMove;
+    }
+    function playGame(guess) {
+      let result = '';
+      const computerMove = pickComputerMove();
+      if (guess === 'Heads') {
+        if (computerMove === 'Heads') {
+          result = 'You win';
+        }
+        else {
+          result = 'You lose'
+        }
+      }
+      else {
+        if (computerMove === 'Tails') {
+          result = 'You win'
+        }
+        else {
+          result = 'You lose'
+        }
+      }
+
+      //8j
+      if (result === 'You win') {
+        scoreCoin.wins += 1;
+      }
+      else {
+        scoreCoin.loses += 1
+      }
+      localStorage.setItem('scoreCoin', JSON.stringify(scoreCoin));
+      //console.log(result);
+      console.log(scoreCoin);
+      return result;
+    }
+  </script>
+
+  <!-- <script>
     //8a
     const basketball = {
       price: 2095
@@ -35,15 +93,55 @@
       price: 1200
     }
 
-    function comparePrice(product1, product2, property1, property2) {
-      if (property1 < property2)
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price)
         return product1;
-      else if (property2 < property1)
+      else if (product2.price < product1.price)
         return product2;
     }
-    const lessExpensive = comparePrice(product1, product2, product1.price, product2.price);
-    console.log(lessExpensive);
-  </script>
+    const lessExpensive = comparePrice(product1, product2);
+    console.log('Less expensive', lessExpensive);
+
+    //8e
+    const product3 = {
+      name: 'pants',
+      price: 1000
+    }
+    const product4 = {
+      name: 'shirt',
+      price: 1200
+    }
+    const product5 = product1;
+    console.log('product 5', product5);
+
+    function isSameProduct(product1, product2) {
+      if (product1.name === product2.name && product1.price === product2.price)
+        return true;
+      else
+        return false
+    }
+    console.log((isSameProduct(product1, product2)));
+    console.log((isSameProduct(product1, product3)));
+    console.log((isSameProduct(product1, product4)));
+    console.log((isSameProduct(product1, product5)));
+
+    //8f
+    console.log('Good Morning'.toLowerCase());
+
+    const text = 'Good Morning';
+    console.log(text.toLowerCase());
+
+    //8g
+    function repeatString(str, times) {
+      if (times > 0)
+        return str.repeat(times)
+      else
+        return str
+    }
+    console.log(repeatString('test', 5));
+    console.log(repeatString('test', 0));
+
+  </script> -->
 </body>
 
 </html>
