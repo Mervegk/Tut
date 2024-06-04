@@ -8,6 +8,12 @@
 </head>
 
 <body>
+
+  <!-- 9g -->
+  <input class="cost">
+  <button class="calculate" onclick="calculate()">Calculate</button>
+  <p style="color: black;" class="show-cost"></p>
+
   <!--  <div>
     <button>9a</button>
     <button class="exercise-9">9b</button>
@@ -35,7 +41,7 @@
       let headAndTailsResult = document.querySelector('.head-tails-result');
       letheadAndTailsValue = headAndTailsResult.innerText = `You choose: ${choice}`;
     } */
-    
+
     //9d
     /*  function getValueOfInput() {
        const nameInput = document.querySelector('.name-input');
@@ -43,15 +49,30 @@
        document.querySelector('.name-text').innerHTML = `Your name is: ${value}`;
 
      } */
-    
-     //9e/f
+
+    //9e/f
     /*  function handleKeyDown(e) {
        if (e.key === 'Enter') {
          getValueOfInput();
        }
      } */
-  
-  //9g
+
+    //9g
+    function calculate() {
+      const costInput = document.querySelector('.cost');
+      let costValue = Number(costInput.value);
+      let totalCost;
+      if (costValue < 40) {
+        totalCost = (costValue * 100) + 10;
+        totalCost /= 100;
+      }
+      else {
+        totalCost = costValue;
+      }
+      document.querySelector('.show-cost').innerHTML = `$${totalCost}`
+
+    }
+
   </script>
 </body>
 
