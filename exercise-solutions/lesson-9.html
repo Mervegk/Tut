@@ -9,10 +9,14 @@
 
 <body>
 
+  <!-- 9h -->
+  <!--  <input class="input-value" onkeyup="showValue()">
+  <p class="show-input-value"></p> -->
+
   <!-- 9g -->
-  <input class="cost">
+  <!--  <input class="cost">
   <button class="calculate" onclick="calculate()">Calculate</button>
-  <p style="color: black;" class="show-cost"></p>
+  <p style="color: black;" class="show-cost"></p> -->
 
   <!--  <div>
     <button>9a</button>
@@ -50,6 +54,7 @@
 
      } */
 
+
     //9e/f
     /*  function handleKeyDown(e) {
        if (e.key === 'Enter') {
@@ -58,20 +63,28 @@
      } */
 
     //9g
-    function calculate() {
-      const costInput = document.querySelector('.cost');
-      let costValue = Number(costInput.value);
-      let totalCost;
-      if (costValue < 40) {
-        totalCost = (costValue * 100) + 10;
-        totalCost /= 100;
-      }
-      else {
-        totalCost = costValue;
-      }
-      document.querySelector('.show-cost').innerHTML = `$${totalCost}`
+    /*   function calculate() {
+        const costInput = document.querySelector('.cost');
+        let costValue = Number(costInput.value);
+        let totalCost;
+        if (costValue < 40) {
+          totalCost = (costValue * 100) + (10 * 100);
+          totalCost /= 100;
+        }
+        else {
+          totalCost = costValue;
+        }
+        document.querySelector('.show-cost').innerHTML = `$${totalCost}`
+      } */
 
-    }
+    //9h
+    /*  function showValue() {
+       const inputValue = document.querySelector('.input-value');
+       let showInputValue = document.querySelector('.show-input-value');
+       showInputValue.innerHTML = inputValue.value;
+       console.log(inputValue.value);
+     } */
+
 
   </script>
 </body>

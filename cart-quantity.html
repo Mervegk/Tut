@@ -18,6 +18,8 @@
   <button onclick="addToCart(2)">+2</button>
   <button onclick="addToCart(3)">+3</button>
   <button onclick="addToCart(0)">Reset Cart</button>
+  <h4>Excercise 9i</h4>
+  <p class="show-cart-quantity"></p>
   <h4>Excercise 5h</h4>
   <button onclick="addToCart(4)">+4</button>
   <button onclick="addToCart(5)">+5</button>
@@ -28,6 +30,10 @@
   <script>
     let cartQuantity = 0;
 
+    //Excercise 9i
+    let showQuantity = document.querySelector('.show-cart-quantity');
+    showQuantity.innerHTML = cartQuantity;
+
     function addToCart(value) {
       if (value === 0) {
         cartQuantity = 0;
@@ -36,14 +42,26 @@
         return cartQuantity;
       }
 
-      if (cartQuantity + value >= 10) {
+      if (cartQuantity + value > 10) {
         console.log('Cart is full');
+        console.log(`Cart Quantity: ${cartQuantity}`);
+        return;
+      }
+
+      if (cartQuantity + value <= 1) {
+        console.log('Cart is empty');
+        console.log(`Cart Quantity: ${cartQuantity}`);
         return;
       }
 
       cartQuantity = cartQuantity + value;
       console.log(`Cart quantity: ${cartQuantity}`);
+
+      //Excercise 9i
+      showQuantity.innerHTML = cartQuantity;
     }
+
+
 
   </script>
 </body>
