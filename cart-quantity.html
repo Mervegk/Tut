@@ -39,6 +39,7 @@
         cartQuantity = 0;
         console.log('Cart was reset.');
         console.log(`Cart Quantity: ${cartQuantity}`);
+        showQuantity.innerHTML = cartQuantity;
         return cartQuantity;
       }
 
@@ -47,8 +48,7 @@
         console.log(`Cart Quantity: ${cartQuantity}`);
         return;
       }
-
-      if (cartQuantity + value <= 1) {
+      else if (cartQuantity + value < 0) {
         console.log('Cart is empty');
         console.log(`Cart Quantity: ${cartQuantity}`);
         return;
