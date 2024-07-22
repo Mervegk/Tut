@@ -8,6 +8,9 @@
 </head>
 
 <body>
+  <div>
+    <h1 class="display-calculation" style="min-height:50px;"></h1>
+  </div>
   <p>
     <button onclick="calculator(' 1')">1</button>
     <button onclick="calculator(' 2')">2</button>
@@ -34,24 +37,40 @@
     calculation = eval(calculation); 
     //Solution 8h
     localStorage.setItem('calculation', JSON.stringify(calculation))
-    console.log(calculation);">=</button>
+    console.log(calculation);
+    //Solution 9j
+    showCalculationInPage(calculation)">=</button>
   </p>
   <p>
     <button onclick="
       calculation = '';
-      console.log(calculation);">Clear</button>
+      console.log(calculation);
+      //Solution 9j
+      showCalculationInPage(calculation)
+      ">Clear</button>
   </p>
 
   <script>
+
     //Solution 8h
     const getLocal = JSON.parse(localStorage.getItem('calculation'))
     console.log(getLocal);
     //Solution 8h
 
+    //Solution 9j
+    showCalculationInPage(getLocal)
+
     let calculation = "";
     function calculator(number) {
       calculation += number;
       console.log(calculation);
+      showCalculationInPage(calculation)
+    }
+
+    //Solution 9j
+    function showCalculationInPage(solution) {
+      const showCalculation = document.querySelector('.display-calculation');
+      showCalculation.innerHTML = solution;
     }
   </script>
 </body>
