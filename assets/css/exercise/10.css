@@ -1,3 +1,14 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial;
+}
+
 .amazon-cart-button {
   background-color: rgb(255, 216, 20);
   color: black;
@@ -62,4 +73,60 @@
 .is-toggled {
   background-color: rgb(230, 230, 230);
   color: black;
+}
+
+.calculate {
+  margin-top: 50px;
+}
+
+.css-cost-input {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.calculate-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+}
+
+.calculator-body {
+  margin-top: 30px;
+}
+
+.calculator-regular-button {
+  background-color: rgb(51, 51, 51);
+  color: white;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.calculator-clear-button {
+  font-size: 17px;
+}
+
+.calculator-operation-button {
+  background-color: orange;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+  text-align: center;
 }
