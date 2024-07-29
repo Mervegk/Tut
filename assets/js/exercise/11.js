@@ -120,6 +120,7 @@ function minMax(nums) {
       }
     }
   }
+
   if (nums.length > 1) {
     minMaxObj.min = nums[0]
     minMaxObj.max = nums[nums.length - 1]
@@ -135,6 +136,17 @@ console.log(minMax([3]));  */
 
 /* 11n */
 function countWords(words) {
-  const countWordsObj = { name: null, count: null };
+  const countWordsObj = { name: null, count: 0 };
 
+  for (let item1 = 0; item1 < words.length; item1++) {
+    for (let item2 = 0; item2 < item1; item2++) {
+      if (words[item1] === words[item2]) {
+        countWordsObj.name = words[item1];
+        countWordsObj.count += 1;
+      }
+    }
+  }
+
+  return countWordsObj
 }
+console.log(countWords(['apple', 'grape', 'apple', 'apple']));
