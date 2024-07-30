@@ -1,7 +1,8 @@
 /* 11a */
 const nums = [10, 20, 30];
 nums[2] = 99;
-// console.log(nums);
+console.log('11a');
+console.log(nums);
 
 /* 11b */
 function getLastValue(array) {
@@ -9,8 +10,9 @@ function getLastValue(array) {
   // console.log(array[lastIndex]);
   return array[lastIndex]
 }
-/* console.log(getLastValue([1, 20, 22, 24, 5]));
-console.log(getLastValue(['hi', 'hello', 'good']));  */
+console.log('11b');
+console.log(getLastValue([1, 20, 22, 24, 5]));
+console.log(getLastValue(['hi', 'hello', 'good']));
 
 /* 11c */
 function arraySwap(array) {
@@ -23,30 +25,34 @@ function arraySwap(array) {
 
   return array;
 }
-/* console.log(arraySwap([5, 20, 22, 24, 1]));
-console.log(arraySwap(['hi', 'hello', 'good'])); */
+console.log('11c');
+console.log(arraySwap([5, 20, 22, 24, 1]));
+console.log(arraySwap(['hi', 'hello', 'good']));
 
 /* 11d */
-/* for (let i = 0; i <= 10; i += 2) {
+console.log('11d');
+for (let i = 0; i <= 10; i += 2) {
   console.log(i);
-} */
+}
 
 /* 11e */
-/* for (let i = 5; i >= 0; i--) {
+console.log('11e');
+for (let i = 5; i >= 0; i--) {
   console.log(i);
-} */
+}
 
 /* 11f */
-/* let i = 0;
- while (i <= 10) {
+console.log('11f');
+let i = 0;
+while (i <= 10) {
   console.log(i);
   i += 2;
-} 
+}
 let item = 5;
 while (item >= 0) {
   console.log(item);
   item--;
-} */
+}
 
 /* 11h */
 function addOne(array) {
@@ -56,7 +62,8 @@ function addOne(array) {
 
   return array;
 }
-// console.log(addOne([1, 2, 3])); 
+console.log('11h');
+console.log(addOne([1, 2, 3]));
 
 /* 11i */
 function addNum(array, num) {
@@ -66,8 +73,8 @@ function addNum(array, num) {
 
   return array;
 }
-
-// console.log(addNum([1, 2, 3], 2));
+console.log('11i');
+console.log(addNum([1, 2, 3], 2));
 
 /* 11j */
 function addArrays(array1, array2) {
@@ -78,9 +85,9 @@ function addArrays(array1, array2) {
 
   return totalOfArrays;
 }
-
-/* console.log(addArrays([1, 1, 2], [1, 1, 3]));
-console.log(addArrays([1, 2, 3], [4, 5, 6])); */
+console.log('11j');
+console.log(addArrays([1, 1, 2], [1, 1, 3]));
+console.log(addArrays([1, 2, 3], [4, 5, 6]));
 
 /* 11k */
 function countPositive(nums) {
@@ -94,9 +101,9 @@ function countPositive(nums) {
 
   return count;
 }
-
-/* console.log(countPositive([1, -3, 5]));
-console.log(countPositive([-2, 3, -5, 7, 10])); */
+console.log('11k');
+console.log(countPositive([1, -3, 5]));
+console.log(countPositive([-2, 3, -5, 7, 10]));
 
 /* 11l */
 function minMax(nums) {
@@ -128,11 +135,11 @@ function minMax(nums) {
 
   return minMaxObj;
 }
-/* console.log('11m');
+console.log('11m');
 console.log(minMax([1, -3, 5]));
 console.log(minMax([-2, 3, -5, 7, 10]));
 console.log(minMax([]));
-console.log(minMax([3]));  */
+console.log(minMax([3]));
 
 /* 11n */
 function countWords(words) {
@@ -150,4 +157,5 @@ function countWords(words) {
 
   return countWordsObj
 }
+console.log('11n');
 console.log(countWords(['apple', 'grape', 'apple', 'apple']));
