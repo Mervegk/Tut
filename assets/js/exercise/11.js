@@ -136,20 +136,18 @@ console.log(minMax([3]));  */
 
 /* 11n */
 function countWords(words) {
-  const countWordsObj = [{ name: null, count: 0 }];
-  let counter = 0;
-  let countedName;
+  const countWordsObj = {};
 
-
-  for (let item1 = 0; item1 < words.length; item1++) {
-    for (let item2 = 0; item2 < item1; item2++) {
-      if (words[item1] === words[item2]) {
-        countedName = words[item1];
-        counter += 1;
-      }
+  for (let item = 0; item < words.length; item++) {
+    const word = words[item];
+    if (countWordsObj[word]) {
+      countWordsObj[word] += 1;
+    }
+    else {
+      countWordsObj[word] = 1;
     }
   }
-  countWordsObj.push({ name: countedName, count: counter })
+
   return countWordsObj
 }
 console.log(countWords(['apple', 'grape', 'apple', 'apple']));
