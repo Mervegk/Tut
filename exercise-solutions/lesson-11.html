@@ -34,7 +34,9 @@
     function removeEgg(foods) {
       let result = [];
       let eggs = [];
+
       const reverseFoods = foods.reverse();
+
       console.log('Reversed Food', reverseFoods);
       for (let i = 0; i < reverseFoods.length; i++) {
         const food = reverseFoods[i];
@@ -50,7 +52,7 @@
           result.push(food);
         }
       }
-      return result;
+      return result.reverse();
     }
     console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
     /* 11r, 11s, 11t */
