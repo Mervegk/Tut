@@ -10,7 +10,51 @@
 <body>
 
 
-  <script src="../assets/js/exercise/11.js"></script>
+  <!--  <script src="../assets/js/exercise/11.js"></script> -->
+  <script>
+    /* 11o, 11p, 11q */
+    /* function findIndex(arr, word) {
+      let searchIndex = -1;
+      for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+
+        if (element === word) {
+          searchIndex = i;
+          break;
+        }
+      }
+      return searchIndex;
+    }
+
+    console.log(findIndex(['hello', 'world', 'search', 'good', 'search', 'good'], 'good'));
+    console.log(findIndex(['not', 'found'], 'found')); */
+    /* 11o, 11p, 11q */
+
+    /* 11r, 11s, 11t */
+    function removeEgg(foods) {
+      let result = [];
+      let eggs = [];
+      const reverseFoods = foods.reverse();
+      console.log('Reversed Food', reverseFoods);
+      for (let i = 0; i < reverseFoods.length; i++) {
+        const food = reverseFoods[i];
+
+        if (food === 'egg') {
+          eggs.push(food);
+          if (eggs.length > 2) {
+            result.push(food);
+          }
+          continue;
+        }
+        else {
+          result.push(food);
+        }
+      }
+      return result;
+    }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    /* 11r, 11s, 11t */
+  </script>
 </body>
 
 </html>

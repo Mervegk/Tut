@@ -12,13 +12,12 @@ function renderTodoList() {
     const todoObj = todoList[i];
     const { name, dueDate } = todoObj;
     const html = `
-    <p>
-      ${name} ${dueDate}
+     <div>${name}</div>
+      <div>${dueDate}</div>
       <button onClick="
-      todoList.splice(${i}, 1);
-      renderTodoList();
-      ">Delete</button>
-    </p>
+       todoList.splice(${i}, 1);
+        renderTodoList();
+      " class="delete-todo-button">Delete</button>
     `
     todoListHtml += html;
   }
