@@ -1,7 +1,7 @@
 /* 11a */
 const nums = [10, 20, 30];
 nums[2] = 99;
-console.log('11a');
+console.log('11A');
 console.log(nums);
 
 /* 11b */
@@ -10,7 +10,7 @@ function getLastValue(array) {
   // console.log(array[lastIndex]);
   return array[lastIndex]
 }
-console.log('11b');
+console.log('11B');
 console.log(getLastValue([1, 20, 22, 24, 5]));
 console.log(getLastValue(['hi', 'hello', 'good']));
 
@@ -25,24 +25,24 @@ function arraySwap(array) {
 
   return array;
 }
-console.log('11c');
+console.log('11C');
 console.log(arraySwap([5, 20, 22, 24, 1]));
 console.log(arraySwap(['hi', 'hello', 'good']));
 
 /* 11d */
-console.log('11d');
+console.log('11D');
 for (let i = 0; i <= 10; i += 2) {
   console.log(i);
 }
 
 /* 11e */
-console.log('11e');
+console.log('11E');
 for (let i = 5; i >= 0; i--) {
   console.log(i);
 }
 
 /* 11f */
-console.log('11f');
+console.log('11F');
 let i = 0;
 while (i <= 10) {
   console.log(i);
@@ -62,7 +62,7 @@ function addOne(array) {
 
   return array;
 }
-console.log('11h');
+console.log('11H');
 console.log(addOne([1, 2, 3]));
 
 /* 11i */
@@ -73,7 +73,7 @@ function addNum(array, num) {
 
   return array;
 }
-console.log('11i');
+console.log('11I');
 console.log(addNum([1, 2, 3], 2));
 
 /* 11j */
@@ -85,7 +85,7 @@ function addArrays(array1, array2) {
 
   return totalOfArrays;
 }
-console.log('11j');
+console.log('11J');
 console.log(addArrays([1, 1, 2], [1, 1, 3]));
 console.log(addArrays([1, 2, 3], [4, 5, 6]));
 
@@ -101,7 +101,7 @@ function countPositive(nums) {
 
   return count;
 }
-console.log('11k');
+console.log('11K');
 console.log(countPositive([1, -3, 5]));
 console.log(countPositive([-2, 3, -5, 7, 10]));
 
@@ -135,7 +135,7 @@ function minMax(nums) {
 
   return minMaxObj;
 }
-console.log('11m');
+console.log('11M');
 console.log(minMax([1, -3, 5]));
 console.log(minMax([-2, 3, -5, 7, 10]));
 console.log(minMax([]));
@@ -157,5 +157,73 @@ function countWords(words) {
 
   return countWordsObj
 }
-console.log('11n');
+console.log('11N');
 console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+/* 11o, 11p, 11q */
+console.log('11O, 11P, 11Q');
+function findIndex(arr, word) {
+  let searchIndex = -1;
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+
+    if (element === word) {
+      searchIndex = i;
+      break;
+    }
+  }
+  return searchIndex;
+}
+
+console.log(findIndex(['hello', 'world', 'search', 'good', 'search', 'good'], 'good'));
+console.log(findIndex(['not', 'found'], 'found'));
+/* 11o, 11p, 11q */
+
+/* 11r, 11s, 11t, 11u */
+console.log(' 11R, 11S, 11T, 11U');
+function removeEgg(foods) {
+  let result = [];
+  let eggs = [];
+
+  const copyFoods = foods.slice();
+  const reverseFoods = copyFoods.reverse();
+
+  for (let i = 0; i < reverseFoods.length; i++) {
+    const food = reverseFoods[i];
+
+    if (food === 'egg') {
+      eggs.push(food);
+      if (eggs.length > 2) {
+        result.push(food);
+      }
+      continue;
+    }
+    else {
+      result.push(food);
+    }
+  }
+  return result.reverse();
+}
+const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+console.log('Before Function', foods);
+console.log(removeEgg(foods));
+console.log('After Function', foods);
+/* 11r, 11s, 11t, 11u */
+
+/* 11v */
+console.log('11V');
+for (let i = 1; i <= 30; i++) {
+  if (i % 3 === 0 && i % 5 !== 0) {
+    console.log('Fizz');
+    continue;
+  }
+  else if (i % 5 === 0 && i % 3 !== 0) {
+    console.log('Buzz');
+    continue;
+  }
+  else if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz');
+    continue;
+  }
+  console.log(i);
+}

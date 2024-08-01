@@ -10,10 +10,10 @@
 <body>
 
 
-  <!--  <script src="../assets/js/exercise/11.js"></script> -->
+  <!-- <script src="../assets/js/exercise/11.js"></script> -->
   <script>
-    /* 11o, 11p, 11q */
-    /* function findIndex(arr, word) {
+    // console.log('11O, 11P, 11Q');
+    function findIndex(arr, word) {
       let searchIndex = -1;
       for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
@@ -26,55 +26,24 @@
       return searchIndex;
     }
 
-    console.log(findIndex(['hello', 'world', 'search', 'good', 'search', 'good'], 'good'));
-    console.log(findIndex(['not', 'found'], 'found')); */
-    /* 11o, 11p, 11q */
+    /*  console.log(findIndex(['hello', 'world', 'search', 'good', 'search', 'good'], 'good'));
+     console.log(findIndex(['not', 'found'], 'found')); */
 
-    /* 11r, 11s, 11t, 11u */
-    /* function removeEgg(foods) {
-      let result = [];
-      let eggs = [];
-
-      const copyFoods = foods.slice();
-      const reverseFoods = copyFoods.reverse();
-
-      console.log('Reversed Food', reverseFoods);
-      for (let i = 0; i < reverseFoods.length; i++) {
-        const food = reverseFoods[i];
-
-        if (food === 'egg') {
-          eggs.push(food);
-          if (eggs.length > 2) {
-            result.push(food);
+    function unique(arrayOfStrings) {
+      let counter = 0;
+      for (let item1 = 0; item1 < arrayOfStrings.length; item1++) {
+        for (let item2 = 0; item2 < item1; item2++) {
+          if (arrayOfStrings[item1] === arrayOfStrings[item2]) {
+            console.log(item2);
+            counter++;
           }
-          continue;
-        }
-        else {
-          result.push(food);
         }
       }
-      return result.reverse();
-    }
-    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])); */
-    /* 11r, 11s, 11t, 11u */
+      //console.log(counter);
 
-    /* 11v */
-
-    for (let i = 1; i <= 20; i++) {
-      if (i % 3 === 0) {
-        console.log('Fizz');
-        continue;
-      }
-      else if (i % 5 === 0) {
-        console.log('Buzz');
-        continue;
-      }
-      else if (i % 3 === 0 && i % 5 === 0) {
-        console.log('FizzBuzz');
-      }
-      console.log(i);
     }
 
+    unique(['hello', 'world', 'search', 'good', 'search', 'good'])
   </script>
 </body>
 
