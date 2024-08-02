@@ -30,20 +30,18 @@
      console.log(findIndex(['not', 'found'], 'found')); */
 
     function unique(arrayOfStrings) {
-      let counter = 0;
-      for (let item1 = 0; item1 < arrayOfStrings.length; item1++) {
-        for (let item2 = 0; item2 < item1; item2++) {
-          if (arrayOfStrings[item1] === arrayOfStrings[item2]) {
-            console.log(item2);
-            counter++;
-          }
+      let result = []
+      for (let i = 0; i < arrayOfStrings.length; i++) {
+        const element = arrayOfStrings[i];
+        if (findIndex(result, element) === -1) {
+          result.push(element)
         }
       }
-      //console.log(counter);
-
+      return result;
     }
 
-    unique(['hello', 'world', 'search', 'good', 'search', 'good'])
+    console.log(unique(['hello', 'world', 'search', 'good', 'search', 'good']));
+    console.log(unique(['hello', 'world', 'search', 'good', 'good'])); 
   </script>
 </body>
 
