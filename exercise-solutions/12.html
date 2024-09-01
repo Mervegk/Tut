@@ -9,21 +9,15 @@
 
 <body>
   <!-- 12C -->
-  <!-- <button class="start-btn" onclick=" changeText();">Start</button> -->
+  <button class="start-btn" onclick=" changeText();">Start</button>
 
   <!-- 12E -->
   <!-- <button class="add-cart-btn" onclick=" addToCartChange();">Add to cart</button>
   <p class="cart-text"></p> -->
 
   <!-- 12H, 12I -->
-  <button onclick="messageCount++;">Add</button>
-  <button onclick=" 
-  if(messageCount > 0) {
-    messageCount--;
-  }
-  else {
-    messageCount = 0;
-  }">Remove</button>
+  <button class="add-btn">Add</button>
+  <button class="remove-btn">Remove</button>
 
   <script>
     // 12A
@@ -46,8 +40,8 @@
       let startBtn = document.querySelector('.start-btn');
       // 12D
       startBtn.innerHTML = 'Loading...';
-      // 12D
-      setTimeout(function () {
+      // 12D, 12P
+      setTimeout(() => {
         startBtn.innerHTML = 'Finished';
       }, 1000)
     }
@@ -72,7 +66,8 @@
     function showMessageNotification() {
       const domTitle = 'App';
 
-      setInterval(function () {
+      //12P
+      setInterval(() => {
         if (document.title === 'Exercise 12') {
           document.title = `(${messageCount}) New Messages`;
         }
@@ -81,8 +76,58 @@
         }
       }, 1000);
     }
-    //showMessageNotification();
+    showMessageNotification();
 
+    //12J
+    const multiply = (number1, number2) => number1 * number2;
+    /* console.log(multiply(2, 3));
+    console.log(multiply(7, 10)); */
+
+    //12L
+    const countPositive = (nums) => {
+      let counter = 0;
+      nums.forEach((value) => {
+        if (value >= 0) {
+          counter += 1;
+        }
+      })
+      return counter;
+    }
+    /* console.log(countPositive([1, -3, 5]));
+    console.log(countPositive([-2, 3, -5, 7, 10])); */
+
+    //12M
+    const addNum = (array, num) => array.map(value => value + num);
+    //console.log(addNum([1, 2, 3], 2));
+
+    //12N
+    const removeEgg = (foods) => foods.filter(value => value !== 'egg');
+    // console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    //12O
+    const removeFirst2Egg = (foods) => {
+      let counter = 0;
+
+      return foods.filter(value => {
+        if (value === 'egg' && counter < 2) {
+          counter++;
+          return false;
+        }
+        return true;
+      });
+    };
+    //console.log(removeFirst2Egg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    //12P
+    document.querySelector('.add-btn').addEventListener('click', () => messageCount++);
+    document.querySelector('.remove-btn').addEventListener('click', () => {
+      if (messageCount > 0) {
+        messageCount--;
+      }
+      else {
+        messageCount = 0;
+      }
+    });
   </script>
 </body>
 
