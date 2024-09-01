@@ -1,4 +1,4 @@
-const todoList = [
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [
   { name: 'yemek ye', dueDate: '2024-08-01' },
   { name: 'telefonunu şarj et', dueDate: '2024-07-31' },
   { name: 'su iç', dueDate: '2024-08-02' }
@@ -36,8 +36,9 @@ function addTodo() {
 
   todoNameInput.value = '';
   renderTodoList();
+  saveToStorage();
 }
 
-localStorage.setItem('todoList', JSON.stringify(todoList));
-let todoListLocaleStorage = JSON.parse(localStorage.getItem('todoList'))
-console.log(todoListLocaleStorage);
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+}
