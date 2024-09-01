@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 12</title>
+</head>
+
+<body>
+  <!-- 12C -->
+  <button class="start-btn" onclick=" changeText();">Start</button>
+  <!-- 12E -->
+  <button class="add-cart-btn" onclick=" addToCartChange();">Add to cart</button>
+  <p class="cart-text"></p>
+  <script>
+    // 12A
+    /*   const add = function () {
+        console.log(2 + 3);
+      }
+        add();
+        add(); */
+
+    //12B
+    /* const runTwice = function (fun) {
+      fun();
+      fun();
+    }
+    runTwice(function () { console.log('12B') })
+    runTwice(add) */
+
+    //12C 
+    function changeText() {
+      let startBtn = document.querySelector('.start-btn');
+      // 12D
+      startBtn.innerHTML = 'Loading...';
+      // 12D
+      setTimeout(function () {
+        startBtn.innerHTML = 'Finished';
+      }, 1000)
+    }
+
+    //12E
+    function addToCartChange() {
+      //12F
+      let addCartTimeOutID;
+      let addText = document.querySelector('.cart-text');
+
+      addText.innerHTML = 'Added';
+      //12F
+      clearTimeout(addCartTimeOutID);
+
+      setTimeout(function () {
+        addText.innerHTML = '';
+      }, 2000);
+    }
+
+    //12G
+    function showMessageNotification() {
+      const messageCount = `(${2}) New Messages`;
+      const domTitle = 'App';
+
+      setInterval(function () {
+        if (document.title === 'Exercise 12') {
+          document.title = messageCount;
+        }
+        else {
+          document.title = 'Exercise 12';
+        }
+      }, 1000);
+    }
+
+  </script>
+</body>
+
+</html>
