@@ -36,14 +36,49 @@ setInterval(function () {
 }, 2000);
 console.log('Next Line 2') */
 
-[
+/* [
   'make dinner',
   'wash dishes',
   'watch youtube'
-].forEach(function (value, index) {
+].forEach((value, index) => {
   if (value === 'wash dishes') {
     return;
   }
   console.log(index);
   console.log(value);
 })
+
+
+const arrowFuntion = () => {
+  console.log('Hello');
+};
+arrowFuntion();
+
+const oneParam = param => {
+  console.log(param + 1);
+}
+oneParam(2)
+
+const oneLine = () => console.log(2 + 3);
+oneLine(); */
+
+/* const object2 = {
+  method: () => { },
+
+  //This is recommended method for passing a method inside an object
+  method() { }
+} */
+
+
+const buttonElement = document.querySelector('.js-button');
+const eventListener = () => {
+  console.log('Click')
+};
+
+buttonElement.addEventListener('click', eventListener);
+
+buttonElement.removeEventListener('click', eventListener)
+
+buttonElement.addEventListener('click', () => {
+  console.log('Click 2')
+});
