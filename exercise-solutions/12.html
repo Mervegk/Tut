@@ -9,10 +9,22 @@
 
 <body>
   <!-- 12C -->
-  <button class="start-btn" onclick=" changeText();">Start</button>
+  <!-- <button class="start-btn" onclick=" changeText();">Start</button> -->
+
   <!-- 12E -->
-  <button class="add-cart-btn" onclick=" addToCartChange();">Add to cart</button>
-  <p class="cart-text"></p>
+  <!-- <button class="add-cart-btn" onclick=" addToCartChange();">Add to cart</button>
+  <p class="cart-text"></p> -->
+
+  <!-- 12H, 12I -->
+  <button onclick="messageCount++;">Add</button>
+  <button onclick=" 
+  if(messageCount > 0) {
+    messageCount--;
+  }
+  else {
+    messageCount = 0;
+  }">Remove</button>
+
   <script>
     // 12A
     /*   const add = function () {
@@ -56,19 +68,21 @@
     }
 
     //12G
+    let messageCount = 2;
     function showMessageNotification() {
-      const messageCount = `(${2}) New Messages`;
       const domTitle = 'App';
 
       setInterval(function () {
         if (document.title === 'Exercise 12') {
-          document.title = messageCount;
+          document.title = `(${messageCount}) New Messages`;
         }
         else {
           document.title = 'Exercise 12';
         }
       }, 1000);
     }
+
+    showMessageNotification();
 
   </script>
 </body>
