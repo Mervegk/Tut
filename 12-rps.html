@@ -19,15 +19,13 @@
       <p class="game-result result"></p>
       <p class="game-moves"></p>
       <p class="game-score score"></p>
-      <button onclick="
-   score.wins = 0;
-   score.loses = 0;
-   score.ties = 0;
-   localStorage.removeItem('score');
-   updateScoreElement();
-   " class="reset-score-button">Reset Score</button>
-      <button onclick="
-      autoPlay();" class="auto-play-button">Auto Play</button>
+      <button class="reset-score-button">Reset Score</button>
+      <button class="auto-play-button">Auto Play</button>
+      <div class="confirm-message-container">
+            <p>Are you sure you want to reset the score?</p>
+            <button class="confirmation-yes">Yes</button>
+            <button class="confirmation-no">No</button>
+      </div>
 
       <script src="./assets/js/12-rps.js"></script>
 </body>

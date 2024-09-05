@@ -9,7 +9,7 @@
 
 <body>
   <!-- 12C -->
-  <button class="start-btn" onclick=" changeText();">Start</button>
+  <button class="start-btn">Start</button>
 
   <!-- 12E -->
   <!-- <button class="add-cart-btn" onclick=" addToCartChange();">Add to cart</button>
@@ -118,7 +118,7 @@
     };
     //console.log(removeFirst2Egg(['egg', 'apple', 'egg', 'egg', 'ham']));
 
-    //12P
+    //12P, 12Q
     document.querySelector('.add-btn').addEventListener('click', () => messageCount++);
     document.querySelector('.remove-btn').addEventListener('click', () => {
       if (messageCount > 0) {
@@ -128,6 +128,11 @@
         messageCount = 0;
       }
     });
+
+    const changeTextListener = () => changeText();
+    document.querySelector('.start-btn').addEventListener('click', changeTextListener);
+
+
   </script>
 </body>
 

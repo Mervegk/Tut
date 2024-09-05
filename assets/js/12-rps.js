@@ -18,9 +18,41 @@ function pickComputerMove() {
   return computerMove;
 }
 
+const confirmationContainer = document.querySelector('.confirm-message-container');
+const confirmYes = document.querySelector('.confirmation-yes');
+const confirmNo = document.querySelector('.confirmation-no');
+function resetScore() {
+  score.wins = 0;
+  score.loses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
+// EXERCISE 12V\ 12X SOLUTION
+document.querySelector('.reset-score-button').addEventListener('click', () => {
+  confirmationContainer.classList.add('show-message');
+  confirmYes.addEventListener('click', () => {
+    resetScore();
+    confirmationContainer.classList.remove('show-message');
+  });
+  confirmNo.addEventListener('click', () => {
+    confirmationContainer.classList.remove('show-message');
+    return;
+  })
+})
+
+// EXERCISE 12W SOLUTION
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace') {
+    resetScore();
+  }
+})
+
+const autoPlayButton = document.querySelector('.auto-play-button');
+
 let isAutoPlaying = false;
 let intervalID;
-
 function autoPlay() {
   if (!isAutoPlaying) {
     intervalID = setInterval(() => {
@@ -28,10 +60,14 @@ function autoPlay() {
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
+    // EXERCISE 12T SOLUTION
+    autoPlayButton.innerHTML = 'Stop Play';
   }
   else {
     clearInterval(intervalID);
     isAutoPlaying = false;
+    // EXERCISE 12T SOLUTION
+    autoPlayButton.innerHTML = 'Auto Play';
   }
 }
 
@@ -109,3 +145,14 @@ function playGame(playerMove) {
 function updateScoreElement() {
   document.querySelector('.game-score').innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`;
 }
+
+// EXERCISE 12R, 12S SOLUTION
+const autoPlayEventListener = () => autoPlay();
+autoPlayButton.addEventListener('click', autoPlayEventListener);
+
+// EXERCISE 12U SOLUTION
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'a') {
+    autoPlay();
+  }
+})
